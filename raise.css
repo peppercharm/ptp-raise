@@ -16,7 +16,7 @@
   height: 100%;
 }
 
-#content .page__title ~ .linkbox:first-of-type, .qtip-shadow, .user-info-bar__drop-down-menu, #userinfo_minor, .search-bar__list, #userinfo_username, body#requests #content .page__title ~ .linkbox:nth-of-type(2), body#userhistory #content .tabs > .tabs__panels > .tabs__panel > .linkbox {
+#content .page__title ~ .linkbox:first-of-type, .qtip-shadow, .user-info-bar__drop-down-menu, #userinfo_minor, #nav_bonus a, .search-bar__list, #userinfo_username, body#requests #content .page__title ~ .linkbox:nth-of-type(2), body#userhistory #content .tabs > .tabs__panels > .tabs__panel > .linkbox {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
@@ -379,6 +379,10 @@ tr[id^=snatch] td:nth-of-type(3) {
 
 .panel__body, .page__title ~ p, body#upload #dnu_header + p, body#user #content > .thin > div > p, #searchbox {
   padding: 12px;
+}
+
+.panel__body:empty, .page__title ~ p:empty, body#upload #dnu_header + p:empty, body#user #content > .thin > div > p:empty, #searchbox:empty {
+  display: none;
 }
 
 .table {
@@ -879,17 +883,17 @@ body#needforseed #browse_settings {
   flex-wrap: wrap;
 }
 
-.basic-movie-list__movie__tags, .cover-movie-list__movie__tags, .huge-movie-list__movie__tag-list, .release-name-movie-list__movie__tags, .movie-tooltip__tags {
+.basic-movie-list__movie__tags, .cover-movie-list__movie__tags, .huge-movie-list__movie__tag-list, .release-name-movie-list__movie__tags, .movie-tooltip__tags, .tags {
   font-size: 0;
 }
 
-.basic-movie-list__movie__tags a, .cover-movie-list__movie__tags a, .huge-movie-list__movie__tag-list a, .release-name-movie-list__movie__tags a, .movie-tooltip__tags a {
+.basic-movie-list__movie__tags a, .cover-movie-list__movie__tags a, .huge-movie-list__movie__tag-list a, .release-name-movie-list__movie__tags a, .movie-tooltip__tags a, .tags a {
   font-size: 12px;
   margin-right: 6px;
   color: rgba(255, 255, 255, 0.4);
 }
 
-.basic-movie-list__movie__tags a:hover, .cover-movie-list__movie__tags a:hover, .huge-movie-list__movie__tag-list a:hover, .release-name-movie-list__movie__tags a:hover, .movie-tooltip__tags a:hover {
+.basic-movie-list__movie__tags a:hover, .cover-movie-list__movie__tags a:hover, .huge-movie-list__movie__tag-list a:hover, .release-name-movie-list__movie__tags a:hover, .movie-tooltip__tags a:hover, .tags a:hover {
   color: #FFF;
 }
 
@@ -927,6 +931,27 @@ img[title=Seeders] {
 
 img[title=Leechers] {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOBAMAAADtZjDiAAAAMFBMVEUAAAD///////////////////////////////////////////////////////////87TQQwAAAAD3RSTlMAAhckJSZNc3emqLS82tygO8DvAAAARklEQVQIW2NggAO+vxCa/z9W2v////8BQJr9//8fYIH6/w1gmh3M3f9/oeH8/xsY/v//k/P//wcg/f//p08fgOIgsAFmCQDlxSY4kYq/nAAAAABJRU5ErkJggg==) no-repeat center;
+}
+
+.basic-movie-list__movie__cover-link,
+.huge-movie-list__movie__cover__link,
+.cover-movie-list__movie__cover-link,
+.small-cover-movie-list__movie__link {
+  position: relative;
+}
+
+.basic-movie-list__movie__cover-link--seen:after,
+.huge-movie-list__movie__cover__link--seen:after,
+.cover-movie-list__movie__cover-link--seen:after,
+.small-cover-movie-list__movie__link--seen:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: url(//static.passthepopcorn.me/static/common/symbols/seen-overlay.png);
+  background-size: cover;
+  width: 22px;
+  height: 22px;
 }
 
 #movie-view-container .small-cover-movie-list__container,
@@ -1016,17 +1041,6 @@ img[title=Leechers] {
 .basic-movie-list__movie__cover-link {
   display: block;
   position: relative;
-}
-
-.basic-movie-list__movie__cover-link--seen:after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  background-image: url(//static.passthepopcorn.me/static/common/symbols/seen-overlay.png);
-  background-size: cover;
-  width: 22px;
-  height: 22px;
 }
 
 .basic-movie-list__movie__ratings-and-tags {
@@ -1706,6 +1720,9 @@ img[title=Leechers] {
   -webkit-flex-direction: row-reverse;
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .user-info-bar__list, .user-info-bar__drop-down-menu {
@@ -1931,14 +1948,14 @@ img[title=Leechers] {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 175px;
+  width: 155.55556px;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  margin-left: 43.75px;
+  margin-left: 38.88889px;
 }
 
 #userinfo_major a {
@@ -1949,16 +1966,74 @@ img[title=Leechers] {
   font-size: 20px;
 }
 
+#nav_bonus {
+  position: absolute;
+  left: 350px;
+}
+
+#nav_bonus a {
+  z-index: 500;
+  position: absolute;
+  top: 18px;
+  bottom: -60px;
+  display: block;
+  height: 40px;
+  max-height: 0;
+  width: 150px;
+  line-height: 40px;
+  vertical-align: middle;
+  text-align: center;
+  background: rgba(66, 66, 66, 0.95);
+  font-family: 'Roboto';
+  text-transform: uppercase;
+}
+
+#nav_bonus a:before {
+  content: '\E8E0';
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 20px;
+  margin-top: -30px;
+  margin-left: 65px;
+  line-height: 20px;
+  color: rgba(255, 228, 38, 0.6);
+  transition: color .1s;
+}
+
+#nav_bonus a:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  display: none;
+  height: 0;
+  width: 0;
+  margin-left: 65px;
+  margin-top: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgba(66, 66, 66, 0.95);
+}
+
+#nav_bonus a:hover {
+  max-height: 100px;
+  font-size: 11px;
+}
+
+#nav_bonus a:hover:before {
+  color: #FFE426;
+}
+
+#nav_bonus a:hover:after {
+  display: block;
+}
+
 #nav_upload a:before {
   content: '\E89C';
 }
 
 #nav_invite a:before {
   content: '\E7FE';
-}
-
-#nav_bonus a:before {
-  content: '\E8E0';
 }
 
 #nav_donate a:before {
@@ -1975,7 +2050,7 @@ img[title=Leechers] {
   z-index: 300;
   position: absolute;
   top: 55px;
-  left: -9214px;
+  left: -9194.55556px;
   width: 215px;
   list-style: none;
   background: rgba(66, 66, 66, 0.95);
@@ -1996,7 +2071,7 @@ img[title=Leechers] {
 }
 
 .search-bar__list:hover {
-  left: 785px;
+  left: 804.44444px;
 }
 
 .search-bar__list:hover:before {
@@ -2048,6 +2123,7 @@ img[title=Leechers] {
   right: 215px;
   width: 215px;
   background: rgba(66, 66, 66, 0.95);
+  height: 304px;
 }
 
 .search-bar__results__link {
@@ -2074,7 +2150,7 @@ img[title=Leechers] {
   align-items: center;
   height: 40px;
   width: 350px;
-  margin: 0 auto;
+  margin-left: 50px;
 }
 
 #userinfo_stats li {
@@ -2936,10 +3012,6 @@ body#artist .main-column > div:first-of-type {
   position: absolute;
   right: 13px;
   top: 12px;
-}
-
-body#artist .main-column [id^=role] h2 {
-  margin-bottom: 12px;
 }
 
 .snatchlist-status--seeding {
