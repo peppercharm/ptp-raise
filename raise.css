@@ -2625,6 +2625,23 @@ body#forums #content .page__title ~ .linkbox:nth-of-type(2) a:before {
   content: '\E90E';
 }
 
+body#forums #content .pagination--bottom + .linkbox {
+  position: absolute;
+  top: 51px;
+  left: 4px;
+}
+
+body#forums #content .pagination--bottom + .linkbox a {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: rgba(49, 221, 147, 0.6);
+}
+
+body#forums #content .pagination--bottom + .linkbox a:hover {
+  color: #31DD93;
+}
+
 .missing_table tr:nth-of-type(even) td {
   background: rgba(0, 0, 0, 0.12);
 }
