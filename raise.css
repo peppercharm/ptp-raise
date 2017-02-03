@@ -731,14 +731,17 @@ ul, ol {
   color: #B3E725;
 }
 
+#artist_settings,
 #browse_settings {
   width: 0;
   padding: 0 7px;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAAS1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////+DmQsHAAAAGHRSTlMAAQQGBxATFBUXKyxJb3R1kpudwOjp+/12VgXkAAAAYklEQVQImV2P2w7CIABDz2DopkzRIZz//1IfZjTSpzZpegGA67Zd+OGpjw8NOa4vraeYA3D3ixsk1V5KV03Mu7YFlq77DFOzABTbxCgHc1JtpbQjaigi5HiuWtdjxjDy78IbrJwI83lOcEUAAAAASUVORK5CYII=) no-repeat center;
   opacity: 0.6;
   transition: opacity .1s;
+  vertical-align: middle;
 }
 
+#artist_settings:hover,
 #browse_settings:hover {
   opacity: 1;
 }
@@ -751,6 +754,21 @@ ul, ol {
   width: 0;
   height: 39px;
   padding: 0 19.5px;
+}
+
+body#artist .main-column > div:first-of-type {
+  height: 39px;
+  margin-top: -12px;
+  line-height: 39px;
+  vertical-align: middle;
+}
+
+#jump_to_container {
+  margin-right: 24px;
+}
+
+#jump_to_container + span img {
+  margin-top: -2px;
 }
 
 body#trumpable #browse_settings,
@@ -1989,6 +2007,7 @@ img[title=Leechers] {
   vertical-align: middle;
   text-align: center;
   font-family: 'Roboto';
+  font-weight: 700;
   text-transform: uppercase;
   background: rgba(66, 66, 66, 0.95);
 }
@@ -3045,6 +3064,15 @@ body#artist .main-column > div:first-of-type {
 
 .wiki__diff--deleted {
   color: #F7706F;
+}
+
+img[title="This collection is not editable."] {
+  display: inline-block;
+  height: 13px !important;
+  width: 0 !important;
+  padding: 0 6.5px;
+  margin-bottom: -3px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAASFBMVEUAAACoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKilB9wbAAAAF3RSTlMAAQIFBggJETdAR1xmcXWFoqqrwcfm/ddpgJcAAAA8SURBVAhbdcY5AkAwAADBlYibOML+/6eKaE01AAQ+7e6z1J5bk64JIJhgOAA6+xjHAnCr6grUmX9bamdesYwEdlWrpyQAAAAASUVORK5CYII=) no-repeat top;
 }
 
 #searchbox {
