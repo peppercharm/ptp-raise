@@ -401,6 +401,10 @@ tr[id^=snatch] td:nth-of-type(3) {
   border-spacing: 0;
 }
 
+.table--striped tr:nth-of-type(even) td {
+  background: rgba(0, 0, 0, 0.12);
+}
+
 .dataTable th {
   background: rgba(255, 255, 255, 0.03) !important;
   padding: 8px !important;
@@ -1010,6 +1014,7 @@ img[title=Leechers] {
 .basic-movie-list__details-row:not(.compact-movie-list__details-row) > td:first-of-type {
   padding: 0;
   vertical-align: top;
+  position: relative;
 }
 
 .basic-movie-list__number {
@@ -2123,7 +2128,7 @@ img[title=Leechers] {
   right: 215px;
   width: 215px;
   background: rgba(66, 66, 66, 0.95);
-  height: 304px;
+  min-height: 304px;
 }
 
 .search-bar__results__link {
@@ -2473,10 +2478,6 @@ h2[id^=top-header] ~ div .basic-movie-list th {
   margin-bottom: 12px;
 }
 
-#messageformtable tr:nth-of-type(even) > td {
-  background: rgba(0, 0, 0, 0.12);
-}
-
 #messageformtable ~ #sticky {
   margin-left: 12px;
 }
@@ -2489,11 +2490,6 @@ h2[id^=top-header] ~ div .basic-movie-list th {
 .forum_list > tbody > tr > td:nth-of-type(2),
 .forum_index > tbody > tr > td:nth-of-type(2) {
   padding-left: 2px;
-}
-
-.forum_list > tbody > tr:nth-child(even),
-.forum_index > tbody > tr:nth-child(even) {
-  background: rgba(0, 0, 0, 0.12);
 }
 
 .forum-post {
@@ -2640,10 +2636,6 @@ body#forums #content .pagination--bottom + .linkbox a {
 
 body#forums #content .pagination--bottom + .linkbox a:hover {
   color: #31DD93;
-}
-
-.missing_table tr:nth-of-type(even) td {
-  background: rgba(0, 0, 0, 0.12);
 }
 
 .missing-torrent-status {
