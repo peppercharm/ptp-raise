@@ -179,6 +179,17 @@ h2 {
   font-size: 17px;
 }
 
+pre {
+  overflow: auto;
+}
+
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 11px;
+  line-height: 8px;
+  padding-bottom: 8px;
+}
+
 img, img:before {
   font-family: "Source Sans Pro";
 }
@@ -401,7 +412,7 @@ tr[id^=snatch] td:nth-of-type(3) {
   border-spacing: 0;
 }
 
-.table--striped tr:nth-of-type(even) td {
+.table--striped tr:nth-child(even) {
   background-color: rgba(0, 0, 0, 0.12);
 }
 
@@ -2023,6 +2034,7 @@ img[title=Leechers] {
   text-align: center;
   left: 65px;
   top: -34px;
+  font-weight: 300;
   color: rgba(255, 228, 38, 0.6);
   transition: color .1s;
 }
@@ -2185,7 +2197,7 @@ img[title=Leechers] {
 
 #userinfo_stats a:before {
   vertical-align: top;
-  font-size: 20px;
+  font-size: 21px;
 }
 
 #userinfo_stats span {
@@ -2335,6 +2347,7 @@ h2[id^=top-header] ~ div .basic-movie-list th {
   padding: 4px 12px;
 }
 
+.movie-page__torrent-table + #requests th:first-of-type,
 .movie-page__torrent-table > thead th:first-of-type {
   text-align: left;
 }
@@ -2521,24 +2534,29 @@ h2[id^=top-header] ~ div .basic-movie-list th {
 
 .forum-post__avatar-and-body {
   display: table;
+  table-layout: fixed;
   padding: 4px 4px 0;
   min-height: 150px;
+  width: 100%;
 }
 
 .forum-post__avatar {
   display: table-cell;
+  width: 150px;
 }
 
 .forum-post__avatar img {
   height: auto;
-  width: 150px;
+  width: auto;
+  max-height: 400px;
+  max-width: 150px;
 }
 
 .forum-post__body {
   display: table-cell;
   vertical-align: top;
-  padding: 0 8px 8px;
-  width: 100%;
+  padding: 0 16px 8px 8px;
+  word-wrap: break-word;
 }
 
 .forum-post__buttons {
