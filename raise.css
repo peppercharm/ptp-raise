@@ -1059,7 +1059,7 @@ img[title=Leechers] {
   background: #2B2B2B !important;
 }
 
-.basic-movie-list__details-row:not(.compact-movie-list__details-row) > td[colspan="1"] {
+.basic-movie-list__details-row:not(.compact-movie-list__details-row) > td[colspan="1"], .basic-movie-list__details-row:not(.compact-movie-list__details-row) > td[colspan="5"] {
   padding: 0;
   vertical-align: top;
   position: relative;
