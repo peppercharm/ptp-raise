@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700,900");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700");
-.clearfix:after, #content:after, .grid:after, #messageform:after, .forum-post__heading:after {
+.clearfix:after, #content:after, .grid:after, #messageform:after, .forum-post__heading:after, .user-recommendation:after {
   content: '';
   clear: both;
   display: block;
@@ -194,6 +194,7 @@ img, img:before {
   font-family: "Source Sans Pro";
 }
 
+.warning,
 .no-seeders {
   color: #F7706F;
 }
@@ -306,11 +307,11 @@ tr[id^=snatch] td:nth-of-type(3) {
 }
 
 .alert--warning {
-  background: rgba(255, 146, 55, 0.8);
+  background: rgba(255, 146, 55, 0.6);
 }
 
 .alert--error {
-  background: rgba(247, 112, 111, 0.8);
+  background: rgba(247, 112, 111, 0.6);
 }
 
 #wrapper {
@@ -354,7 +355,7 @@ tr[id^=snatch] td:nth-of-type(3) {
   margin: 0 auto;
 }
 
-.panel, .table--panel-like, .forum-post {
+.panel, .table--panel-like, .forum-post, #PartyHatMainDiv {
   background: #2B2B2B;
   margin-bottom: 2px;
   width: 100%;
@@ -871,8 +872,9 @@ body#needforseed #browse_settings {
 }
 
 .search-form__advanced-basic-toggler a[title="Help"]:before {
-  font-size: 16px;
   content: '\E8FD';
+  font-size: 18px;
+  font-weight: 300;
 }
 
 .search-form__advanced-basic-toggler a[title="Help"]:hover:before {
@@ -2720,7 +2722,7 @@ body#upload #content > div:first-of-type {
   width: 100% !important;
 }
 
-body#upload #content > .thin > div:not(.panel):not(.table--panel-like):not(.forum-post) {
+body#upload #content > .thin > div:not(.panel):not(.table--panel-like):not(.forum-post):not(#PartyHatMainDiv) {
   width: 100% !important;
   box-sizing: border-box;
   margin-top: 8px !important;
@@ -2728,11 +2730,11 @@ body#upload #content > .thin > div:not(.panel):not(.table--panel-like):not(.foru
   background: rgba(255, 228, 38, 0.3);
 }
 
-body#upload #content > .thin > div:not(.panel):not(.table--panel-like):not(.forum-post) > br {
+body#upload #content > .thin > div:not(.panel):not(.table--panel-like):not(.forum-post):not(#PartyHatMainDiv) > br {
   display: none;
 }
 
-body#upload #content > .thin > div:not(.panel):not(.table--panel-like):not(.forum-post) > p {
+body#upload #content > .thin > div:not(.panel):not(.table--panel-like):not(.forum-post):not(#PartyHatMainDiv) > p {
   width: 548px;
   font-size: 13px;
   text-align: center;
@@ -2741,7 +2743,7 @@ body#upload #content > .thin > div:not(.panel):not(.table--panel-like):not(.foru
   text-transform: uppercase;
 }
 
-body#upload #content > .thin > div:not(.panel):not(.table--panel-like):not(.forum-post) + p {
+body#upload #content > .thin > div:not(.panel):not(.table--panel-like):not(.forum-post):not(#PartyHatMainDiv) + p {
   margin-top: 8px;
 }
 
@@ -2866,15 +2868,24 @@ body#upload #content > .thin > p input {
   padding-top: 0;
 }
 
-.user-recommendation__image-container {
+.user-recommendation {
   margin-top: 12px;
-  margin-bottom: -4px;
+}
+
+.user-recommendation__image-container {
+  float: left;
+  width: 33.33333%;
+  height: 135px;
 }
 
 .user-recommendation__body {
-  background: rgba(255, 255, 255, 0.03);
-  padding: 12px;
+  width: 66.66667%;
+  padding: 8px;
   text-align: center;
+  float: right;
+  box-sizing: border-box;
+  min-height: 135px;
+  display: block;
 }
 
 body#user #content > .thin > div > p {
@@ -2912,11 +2923,20 @@ body#user #content > .thin > div > p {
   font-weight: 400;
 }
 
-body#staff #content > .thin > .panel, body#staff #content > .thin > .table--panel-like, body#staff #content > .thin > .forum-post {
+#PartyHatMainDiv {
+  left: -201px;
+  padding-left: 202px;
+  top: -29px;
+  padding-top: 29px;
+  z-index: -1;
+  position: relative;
+}
+
+body#staff #content > .thin > .panel, body#staff #content > .thin > .table--panel-like, body#staff #content > .thin > .forum-post, body#staff #content > .thin > #PartyHatMainDiv {
   background: none;
 }
 
-body#staff #content > .thin > .panel > .panel__body, body#staff #content > .thin > .table--panel-like > .panel__body, body#staff #content > .thin > .forum-post > .panel__body, body#staff #content > .thin > .panel > .page__title ~ p, body#staff #content > .thin > .table--panel-like > .page__title ~ p, body#staff #content > .thin > .forum-post > .page__title ~ p, body#staff body#upload #content > .thin > .panel > #dnu_header + p, body#upload body#staff #content > .thin > .panel > #dnu_header + p, body#staff body#upload #content > .thin > .table--panel-like > #dnu_header + p, body#upload body#staff #content > .thin > .table--panel-like > #dnu_header + p, body#staff body#upload #content > .thin > .forum-post > #dnu_header + p, body#upload body#staff #content > .thin > .forum-post > #dnu_header + p, body#staff body#user #content > .thin > div.panel > p, body#user body#staff #content > .thin > div.panel > p, body#staff body#user #content > .thin > div.table--panel-like > p, body#user body#staff #content > .thin > div.table--panel-like > p, body#staff body#user #content > .thin > div.forum-post > p, body#user body#staff #content > .thin > div.forum-post > p, body#staff #content > .thin > .panel > #searchbox, body#staff #content > .thin > .table--panel-like > #searchbox, body#staff #content > .thin > .forum-post > #searchbox {
+body#staff #content > .thin > .panel > .panel__body, body#staff #content > .thin > .table--panel-like > .panel__body, body#staff #content > .thin > .forum-post > .panel__body, body#staff #content > .thin > #PartyHatMainDiv > .panel__body, body#staff #content > .thin > .panel > .page__title ~ p, body#staff #content > .thin > .table--panel-like > .page__title ~ p, body#staff #content > .thin > .forum-post > .page__title ~ p, body#staff #content > .thin > #PartyHatMainDiv > .page__title ~ p, body#staff body#upload #content > .thin > .panel > #dnu_header + p, body#upload body#staff #content > .thin > .panel > #dnu_header + p, body#staff body#upload #content > .thin > .table--panel-like > #dnu_header + p, body#upload body#staff #content > .thin > .table--panel-like > #dnu_header + p, body#staff body#upload #content > .thin > .forum-post > #dnu_header + p, body#upload body#staff #content > .thin > .forum-post > #dnu_header + p, body#staff body#upload #content > .thin > #PartyHatMainDiv > #dnu_header + p, body#upload body#staff #content > .thin > #PartyHatMainDiv > #dnu_header + p, body#staff body#user #content > .thin > div.panel > p, body#user body#staff #content > .thin > div.panel > p, body#staff body#user #content > .thin > div.table--panel-like > p, body#user body#staff #content > .thin > div.table--panel-like > p, body#staff body#user #content > .thin > div.forum-post > p, body#user body#staff #content > .thin > div.forum-post > p, body#staff body#user #content > .thin > div#PartyHatMainDiv > p, body#user body#staff #content > .thin > div#PartyHatMainDiv > p, body#staff #content > .thin > .panel > #searchbox, body#staff #content > .thin > .table--panel-like > #searchbox, body#staff #content > .thin > .forum-post > #searchbox, body#staff #content > .thin > #PartyHatMainDiv > #searchbox {
   padding: 0;
 }
 
@@ -3091,6 +3111,10 @@ img[title="This collection is not editable."] {
   padding: 0 6.5px;
   margin-bottom: -3px;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAASFBMVEUAAACoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKilB9wbAAAAF3RSTlMAAQIFBggJETdAR1xmcXWFoqqrwcfm/ddpgJcAAAA8SURBVAhbdcY5AkAwAADBlYibOML+/6eKaE01AAQ+7e6z1J5bk64JIJhgOAA6+xjHAnCr6grUmX9bamdesYwEdlWrpyQAAAAASUVORK5CYII=) no-repeat top;
+}
+
+body#collages #content > .thin > .table tr td:last-of-type {
+  white-space: nowrap;
 }
 
 #searchbox {
