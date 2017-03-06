@@ -2229,7 +2229,7 @@ img[title^="High quality"] {
   font-weight: 400;
 }
 
-.torrent-info__download-modifier__free {
+.torrent-info__download-modifier--free {
   color: #33C337;
 }
 
