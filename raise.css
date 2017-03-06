@@ -332,7 +332,6 @@ a[onclick^=ToggleTagSelector], [class$=__new]:before, [class$=__bookmark] a, [cl
 
 html {
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 *, *:before, *:after {
@@ -2634,6 +2633,11 @@ img[title^="High quality"] {
   vertical-align: top;
 }
 
+.forum-post__edited {
+  margin-top: 8px;
+  font-size: 11px;
+}
+
 .forum-post__textarea {
   width: 100%;
   resize: vertical;
@@ -2730,6 +2734,7 @@ img[title^="High quality"] {
 body#torrents .thin > .page__title + h2.text--center {
   font-weight: 700;
   background: rgba(182, 232, 47, 0.436);
+  color: #FFF;
 }
 
 .movie-page__trailer {
