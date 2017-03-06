@@ -524,7 +524,7 @@ img:before {
 }
 
 .sidebar-cover-image {
-  width: 100%;
+  max-width: 100%;
 }
 
 .page__title {
