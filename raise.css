@@ -168,9 +168,113 @@ a[onclick^=ToggleTagSelector], [class$=__new]:before, [class$=__bookmark] a, [cl
   text-align: center;
 }
 
+/*
+%dropdown {
+  @extend %shadow;
+  z-index: 100;
+  position: absolute;
+  background: bg('popup');
+
+  a {
+    display: block;
+    height: $dropdown-entry-h;
+    width: $dropdown-entry-w;
+    padding: 0 12px;
+
+    line-height: $dropdown-entry-h;
+    text-transform: uppercase;
+    font-size: $dropdown-entry-fs;
+    vertical-align: middle;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: none;
+
+    &:hover {
+      background: bg-alt('light', 5);
+    }
+  }
+
+  &:before {
+    @extend %head-block;
+    content: '\E5D4';
+    position: absolute;
+    top: -$dropdown-entry-h;
+    font-size: 16px;
+  }
+
+  &:hover:before {
+    background: bg('popup');
+  }
+}
+
+
+%dropdown-left {
+  @extend %dropdown;
+  left: -9999px;
+
+  &:before {
+    right: -9999px;
+    margin-right: $dropdown-entry-w - $panel-head-h;
+  }
+
+  &:hover {
+    left: 0;
+    &:before {
+      right: 0;
+    }
+  }
+}
+
+%dropdown-right {
+  @extend %dropdown;
+  right: -9999px;
+
+  &:before {
+    left: -9999px;
+    margin-left: $dropdown-entry-w - $panel-head-h;
+  }
+
+  &:hover {
+    right: 0;
+    &:before {
+      left: 0;
+    }
+  }
+}
+
+@mixin dropdown($side: 'right', $w: false, $space-top: true, $fontfix: true) {
+  @if $side == 'right' {
+    @extend %dropdown-right;
+  }
+  @else if $side == 'left' {
+    @extend %dropdown-left;
+  }
+
+  @if $w {
+    a {
+      width: $w;
+    }
+  }
+
+  @if $space-top {
+    margin-top: -(space());
+  }
+
+  @if $fontfix {
+    font-size: 0;
+
+    a {
+      font-size: $dropdown-entry-fs;
+    }
+  }
+}
+*/
 #userinfo_username, body#requests .page__title ~ .linkbox:first-of-type:not(:last-of-type), .page__title ~ .linkbox:first-of-type, #userinfo_minor, body#userhistory .tabs__panel > .linkbox, body#requests .page__title ~ .linkbox:nth-of-type(2), body#bprate .linkbox {
   z-index: 100;
   position: absolute;
+  top: -9999px;
   background: rgba(66, 66, 66, 0.95);
 }
 
@@ -197,45 +301,33 @@ a[onclick^=ToggleTagSelector], [class$=__new]:before, [class$=__bookmark] a, [cl
   content: '\E5D4';
   position: absolute;
   top: -38px;
+  margin-top: 9999px;
   font-size: 16px;
 }
 
+#userinfo_username:hover, body#requests .page__title ~ .linkbox:hover:first-of-type:not(:last-of-type), .page__title ~ .linkbox:hover:first-of-type, #userinfo_minor:hover, body#userhistory .tabs__panel > .linkbox:hover, body#requests .page__title ~ .linkbox:hover:nth-of-type(2), body#bprate .linkbox:hover {
+  top: 0;
+}
+
 #userinfo_username:hover:before, body#requests .page__title ~ .linkbox:not(:last-of-type):first-of-type:hover:before, .page__title ~ .linkbox:first-of-type:hover:before, #userinfo_minor:hover:before, body#userhistory .tabs__panel > .linkbox:hover:before, body#requests .page__title ~ .linkbox:nth-of-type(2):hover:before, body#bprate .linkbox:hover:before {
+  margin-top: 0;
   background: rgba(66, 66, 66, 0.95);
 }
 
 #userinfo_username, body#requests .page__title ~ .linkbox:first-of-type:not(:last-of-type) {
-  left: -9999px;
+  left: 0;
 }
 
 #userinfo_username:before, body#requests .page__title ~ .linkbox:not(:last-of-type):first-of-type:before {
-  right: -9999px;
-  margin-right: 167px;
-}
-
-#userinfo_username:hover, body#requests .page__title ~ .linkbox:hover:first-of-type:not(:last-of-type) {
   left: 0;
-}
-
-#userinfo_username:hover:before, body#requests .page__title ~ .linkbox:not(:last-of-type):first-of-type:hover:before {
-  right: 0;
 }
 
 .page__title ~ .linkbox:first-of-type, #userinfo_minor, body#userhistory .tabs__panel > .linkbox, body#requests .page__title ~ .linkbox:nth-of-type(2), body#bprate .linkbox {
-  right: -9999px;
-}
-
-.page__title ~ .linkbox:first-of-type:before, #userinfo_minor:before, body#userhistory .tabs__panel > .linkbox:before, body#requests .page__title ~ .linkbox:nth-of-type(2):before, body#bprate .linkbox:before {
-  left: -9999px;
-  margin-left: 167px;
-}
-
-.page__title ~ .linkbox:hover:first-of-type, #userinfo_minor:hover, body#userhistory .tabs__panel > .linkbox:hover, body#requests .page__title ~ .linkbox:hover:nth-of-type(2), body#bprate .linkbox:hover {
   right: 0;
 }
 
-.page__title ~ .linkbox:first-of-type:hover:before, #userinfo_minor:hover:before, body#userhistory .tabs__panel > .linkbox:hover:before, body#requests .page__title ~ .linkbox:nth-of-type(2):hover:before, body#bprate .linkbox:hover:before {
-  left: 0;
+.page__title ~ .linkbox:first-of-type:before, #userinfo_minor:before, body#userhistory .tabs__panel > .linkbox:before, body#requests .page__title ~ .linkbox:nth-of-type(2):before, body#bprate .linkbox:before {
+  right: 0;
 }
 
 html {
@@ -1003,7 +1095,7 @@ img, img:before {
 }
 
 .page__title ~ .linkbox:first-of-type {
-  margin-top: -2px;
+  margin-top: 38px;
   font-size: 0;
 }
 
@@ -1153,8 +1245,8 @@ a[onclick^=ToggleTagSelector]:hover {
 
 #userinfo_username {
   font-size: 0;
-  top: 55px;
   margin-left: 279px;
+  top: -1000px;
 }
 
 #userinfo_username a {
@@ -1165,11 +1257,18 @@ a[onclick^=ToggleTagSelector]:hover {
   content: '\E853';
   width: 40px;
   height: 40px;
-  top: -40px;
-  margin-right: 165px;
+  margin-top: 1055px;
   line-height: 40px;
   font-size: 20px;
   color: rgba(255, 255, 255, 0.7);
+}
+
+#userinfo_username:hover {
+  top: 55px;
+}
+
+#userinfo_username:hover:before {
+  margin-top: 0;
 }
 
 #nav_logout a:hover {
@@ -1362,19 +1461,20 @@ a[onclick^=ToggleTagSelector]:hover {
 .search-bar {
   z-index: 200;
   position: absolute;
-  right: -9999px;
-  top: 55px;
+  right: 0;
+  top: -1000px;
   background: rgba(66, 66, 66, 0.95);
 }
 
 .search-bar:before {
   content: '\E8B6';
   position: absolute;
-  left: -9999px;
+  top: -40px;
+  left: 0;
   display: block;
   width: 40px;
   height: 40px;
-  margin-top: -40px;
+  margin-top: 1055px;
   line-height: 40px;
   vertical-align: middle;
   text-align: center;
@@ -1384,11 +1484,11 @@ a[onclick^=ToggleTagSelector]:hover {
 }
 
 .search-bar:hover {
-  right: 0;
+  top: 55px;
 }
 
 .search-bar:hover:before {
-  left: 0;
+  margin-top: 0;
   background: rgba(66, 66, 66, 0.95);
   color: #FFF;
 }
@@ -1533,7 +1633,7 @@ a[onclick^=ToggleTagSelector]:hover {
 #userinfo_minor {
   font-size: 0;
   z-index: 150;
-  top: 122px;
+  top: -1000px;
   background: #964e8e;
 }
 
@@ -1555,14 +1655,19 @@ a[onclick^=ToggleTagSelector]:hover {
   top: -50px;
   width: 50px;
   height: 50px;
-  margin-left: 155px;
+  margin-top: 1122px;
   border-top-right-radius: 4px;
   line-height: 50px;
   font-size: 20px;
   background-color: #842f7a;
 }
 
+#userinfo_minor:hover {
+  top: 122px;
+}
+
 #userinfo_minor:hover:before {
+  margin-top: 0;
   background-color: #964e8e;
 }
 
@@ -2492,6 +2597,10 @@ img[title^="High quality"] {
   padding-left: 4px !important;
 }
 
+.forum-post {
+  position: relative;
+}
+
 .forum-post__heading span[id^=bar] input {
   margin-left: 4px;
 }
@@ -2621,10 +2730,6 @@ img[title^="High quality"] {
 body#torrents .thin > .page__title + h2.text--center {
   font-weight: 700;
   background: rgba(182, 232, 47, 0.436);
-}
-
-body#torrents .thin > .page__title + h2.text--center + .linkbox {
-  margin-top: -42px;
 }
 
 .movie-page__trailer {
@@ -2798,21 +2903,6 @@ body#artist [id^=role_] > br {
   color: #1A1A1A;
 }
 
-body#user .page__title {
-  overflow: visible;
-}
-
-body#user .page__title:before {
-  z-index: 500;
-  content: '';
-  position: absolute;
-  right: -205px;
-  display: block;
-  width: 38px;
-  height: 38px;
-  background: #1A1A1A;
-}
-
 body#user .sidebar-cover-image {
   display: block;
   width: auto;
@@ -2850,7 +2940,7 @@ body#userhistory .tabs__bar__list {
 }
 
 body#userhistory .tabs__panel > .linkbox {
-  margin-top: -2px;
+  margin-top: 38px;
   font-size: 0;
 }
 
@@ -2895,7 +2985,7 @@ body#forums .pagination--bottom + .linkbox {
 }
 
 body#requests .page__title ~ .linkbox:first-of-type:not(:last-of-type) {
-  margin-top: -2px;
+  margin-top: 38px;
   font-size: 0;
   right: auto;
 }
@@ -2905,12 +2995,11 @@ body#requests .page__title ~ .linkbox:first-of-type:not(:last-of-type) a {
 }
 
 body#requests .page__title ~ .linkbox:first-of-type:not(:last-of-type):before {
-  left: auto;
   content: '\E5CF';
 }
 
 body#requests .page__title ~ .linkbox:nth-of-type(2) {
-  margin-top: -2px;
+  margin-top: 38px;
   font-size: 0;
 }
 
@@ -3026,7 +3115,7 @@ body#bprate #content > br {
 }
 
 body#bprate .linkbox {
-  margin-top: -2px;
+  margin-top: 38px;
   font-size: 0;
 }
 
