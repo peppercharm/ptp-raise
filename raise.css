@@ -1842,6 +1842,9 @@ a[onclick^=ToggleTagSelector]:hover {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAAS1BMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////+DmQsHAAAAGHRSTlMAAQQGBxATFBUXKyxJb3R1kpudwOjp+/12VgXkAAAAYklEQVQImV2P2w7CIABDz2DopkzRIZz//1IfZjTSpzZpegGA67Zd+OGpjw8NOa4vraeYA3D3ixsk1V5KV03Mu7YFlq77DFOzABTbxCgHc1JtpbQjaigi5HiuWtdjxjDy78IbrJwI83lOcEUAAAAASUVORK5CYII=) no-repeat center;
   opacity: 0.7;
   transition: opacity .1s ease-out;
+  position: absolute;
+  right: 12px;
+  top: 12px;
 }
 
 #browse_settings:hover,
@@ -3026,7 +3029,7 @@ body#forums .heading {
 
 body#forums .pagination--bottom + .linkbox {
   position: absolute;
-  top: 54px;
+  top: 12.5px;
   left: 4px;
   font-size: 0;
 }
