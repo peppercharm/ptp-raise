@@ -104,7 +104,7 @@ body#forums .heading + .forum_index th, body#staff .thin > div:nth-of-type(2) h3
 }
 
 .search-form__advanced-basic-toggler a, a[onclick*="#taglist"],
-a[onclick^=ToggleTagSelector], [class$=__new]:before, [class$=__bookmark] a, [class$=__rate] a, [class$=__trailer] a, .release-name-movie-list__movie__action, [id^=submanager] a:first-child:before, [id^=submanager] a:nth-child(2):before, .torrent_info_first_block + .linkbox a:first-of-type, .torrent_info_first_block + .linkbox a:nth-of-type(2), .screenshot-comparison__old-school-toggler-container a, .last5-movies__show-all-link, .film-club-discuss-link a:before, #jump_to_container a:nth-of-type(1), #jump_to_container a:nth-of-type(2), #jump_to_container a:nth-of-type(3), #jump_to_container a:nth-of-type(4), #jump_to_container a:nth-of-type(5), body#inbox #searchbox span[style^=float] a {
+a[onclick^=ToggleTagSelector], [class$=__new]:before, [class$=__bookmark] a, [class$=__rate] a, [class$=__trailer] a, .release-name-movie-list__movie__action, [id^=submanager] a:first-child:before, [id^=submanager] a:nth-child(2):before, .torrent_info_first_block + .linkbox a:nth-of-type(1), .torrent_info_first_block + .linkbox a:nth-of-type(2), .torrent_info_first_block + .linkbox a:nth-of-type(3), .torrent_info_first_block + .linkbox a:nth-of-type(4), .screenshot-comparison__old-school-toggler-container a, .last5-movies__show-all-link, .film-club-discuss-link a:before, #jump_to_container a:nth-of-type(1), #jump_to_container a:nth-of-type(2), #jump_to_container a:nth-of-type(3), #jump_to_container a:nth-of-type(4), #jump_to_container a:nth-of-type(5), body#inbox #searchbox span[style^=float] a {
   padding: 0 2px;
   font-size: 10px;
   text-transform: uppercase;
@@ -968,6 +968,7 @@ img, img:before {
 }
 
 .star-rating {
+  margin: 0 auto;
   width: 170px;
   height: 20px;
   list-style: none;
@@ -1089,7 +1090,7 @@ img, img:before {
 #Bbcode_Toolbar {
   padding: 4px;
   background: rgba(255, 255, 255, 0.3);
-  border: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-bottom: none;
 }
 
@@ -1941,7 +1942,6 @@ img[title="Request time"] {
 a[class*="link--seen"] {
   position: relative;
   display: block;
-  height: 100%;
 }
 
 a[class*="link--seen"]:after {
@@ -1961,7 +1961,7 @@ a[class*="link--seen"]:after {
 
 .basic-movie-list__details-row td {
   background: rgba(255, 255, 255, 0.03);
-  padding: 8px 12px !important;
+  padding: 8px 12px;
 }
 
 .basic-movie-list__details-row:not(.compact-movie-list__details-row) td:first-of-type {
@@ -1975,7 +1975,8 @@ a[class*="link--seen"]:after {
   font-size: 10px;
   font-weight: 400;
   text-transform: uppercase;
-  color: #B3E725;
+  color: rgba(191, 235, 70, 0.925);
+  letter-spacing: .5px;
 }
 
 .basic-movie-list__torrent__action {
@@ -2132,7 +2133,7 @@ a[class*="link--seen"]:after {
 }
 
 .cover-movie-list--narrow .cover-movie-list__movie__cover-link {
-  height: 246px;
+  height: 246px !important;
 }
 
 .cover-movie-list__movie {
@@ -2388,12 +2389,12 @@ img[title^="High quality"] {
   margin: 0 4px;
 }
 
-.torrent_info_first_block + .linkbox a:first-of-type {
+.torrent_info_first_block + .linkbox a:nth-of-type(1) {
   border-color: #B3E725;
   color: #B3E725;
 }
 
-.torrent_info_first_block + .linkbox a:first-of-type:hover {
+.torrent_info_first_block + .linkbox a:nth-of-type(1):hover {
   background: #B3E725;
   color: #1A1A1A;
 }
@@ -2405,6 +2406,46 @@ img[title^="High quality"] {
 
 .torrent_info_first_block + .linkbox a:nth-of-type(2):hover {
   background: #33C337;
+  color: #1A1A1A;
+}
+
+.torrent_info_first_block + .linkbox a:nth-of-type(3) {
+  border-color: #31DD93;
+  color: #31DD93;
+}
+
+.torrent_info_first_block + .linkbox a:nth-of-type(3):hover {
+  background: #31DD93;
+  color: #1A1A1A;
+}
+
+.torrent_info_first_block + .linkbox a:nth-of-type(4) {
+  border-color: #58F3F3;
+  color: #58F3F3;
+}
+
+.torrent_info_first_block + .linkbox a:nth-of-type(4):hover {
+  background: #58F3F3;
+  color: #1A1A1A;
+}
+
+.torrent_info_first_block + .linkbox a:nth-of-type(4) {
+  border-color: #40A8E6;
+  color: #40A8E6;
+}
+
+.torrent_info_first_block + .linkbox a:nth-of-type(4):hover {
+  background: #40A8E6;
+  color: #1A1A1A;
+}
+
+.torrent_info_first_block + .linkbox a:nth-of-type(4) {
+  border-color: #9443C7;
+  color: #9443C7;
+}
+
+.torrent_info_first_block + .linkbox a:nth-of-type(4):hover {
+  background: #9443C7;
   color: #1A1A1A;
 }
 
@@ -2446,7 +2487,7 @@ img[title^="High quality"] {
 .movie-page__torrent__panel {
   padding: 12px;
   background: rgba(255, 255, 255, 0.03);
-  border: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   margin-bottom: 12px;
 }
 
@@ -2636,6 +2677,7 @@ img[title^="High quality"] {
 .forum-post__edited {
   margin-top: 8px;
   font-size: 11px;
+  font-weight: 400;
 }
 
 .forum-post__textarea {
@@ -2979,7 +3021,7 @@ body#forums .page__title ~ .linkbox:nth-of-type(2) a:before {
 
 body#forums .heading {
   margin-bottom: 0;
-  border-bottom: rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 body#forums .pagination--bottom + .linkbox {
@@ -3138,5 +3180,5 @@ body#staff .thin > div:nth-of-type(2) > .panel__body {
 
 body#staff .thin > div:nth-of-type(2) h3 {
   margin-bottom: 0;
-  border-bottom: rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
