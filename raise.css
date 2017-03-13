@@ -22,6 +22,28 @@
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
+.search-form__advanced-basic-toggler a, a[onclick*="#taglist"],
+a[onclick^=ToggleTagSelector], [class$=__new]:before, [class$=__bookmark] a, [class$=__rate] a, [class$=__trailer] a, .release-name-movie-list__movie__action, [id^=submanager] a:first-child:before, [id^=submanager] a:nth-child(2):before, .torrent_info_first_block + .linkbox a:nth-of-type(1), .torrent_info_first_block + .linkbox a:nth-of-type(2), .torrent_info_first_block + .linkbox a:nth-of-type(3), .torrent_info_first_block + .linkbox a:nth-of-type(4), .screenshot-comparison__old-school-toggler-container a, .last5-movies__show-all-link, .film-club-discuss-link a:before, #jump_to_container a:nth-of-type(1), #jump_to_container a:nth-of-type(2), #jump_to_container a:nth-of-type(3), #jump_to_container a:nth-of-type(4), #jump_to_container a:nth-of-type(5), .subscribed_collages_table td span[style*="right"] a:nth-of-type(1), .subscribed_collages_table td span[style*="right"] a:nth-of-type(2), .subscribed_collages_table td span[style*="right"] a:nth-of-type(3), .subscribed_collages_table td span[style*="right"] a:nth-of-type(4), body#inbox #searchbox span[style^=float] a {
+  padding: 0 2px;
+  font-size: 10px;
+  text-transform: uppercase;
+  border: 1px solid;
+  border-radius: 2px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  white-space: nowrap;
+  transition: none;
+}
+
+.pagination__link--first, .pagination__link--previous, .pagination__link--next, .pagination__link--last {
+  font-size: 0;
+  display: inline-block;
+}
+
+.pagination__link--first:before, .pagination__link--previous:before, .pagination__link--next:before, .pagination__link--last:before {
+  font-size: 18px;
+}
+
 .panel__heading__toggler, .toggle, .discuss, #stats_seeding a, #stats_leeching a, #stats_ratio a, #stats_hnrs a, #nav_upload a, #nav_invite a, #nav_donate a, .basic-torrent-list__movie__torrent-opener-link, #toggleaddtags,
 #toggle_add_similar_movies, #morecast, .box_tags li div a:first-child,
 #similar_movies li div a:first-child, .box_tags li div a:nth-child(2),
@@ -85,35 +107,17 @@ body#forums .heading + .forum_index th, body#staff .thin > div:nth-of-type(2) h3
   border-bottom: rgba(255, 255, 255, 0.03);
 }
 
-#content > p, .thin > p, .panel__body, .simplemodal-data form, .forum-post__body, #related-topics-tab, body#inbox #searchbox, body#upload .thin > div:nth-of-type(1), #dnu_header + p {
+#content > p, .thin > p, .panel__body, .simplemodal-data form, .forum-post__body, #related-topics-tab, body#inbox #searchbox, body#upload .thin > div[style*='width:700px'], #dnu_header + p {
   padding: 12px;
 }
 
-.panel__heading__toggler {
-  position: absolute;
-  top: 14px;
-  right: 12px;
-}
-
-.panel__heading__toggler:before {
-  content: "";
-}
-
-.panel__heading__toggler:before {
-  font-size: 10px;
-}
-
-.search-form__advanced-basic-toggler a, a[onclick*="#taglist"],
-a[onclick^=ToggleTagSelector], [class$=__new]:before, [class$=__bookmark] a, [class$=__rate] a, [class$=__trailer] a, .release-name-movie-list__movie__action, [id^=submanager] a:first-child:before, [id^=submanager] a:nth-child(2):before, .torrent_info_first_block + .linkbox a:nth-of-type(1), .torrent_info_first_block + .linkbox a:nth-of-type(2), .torrent_info_first_block + .linkbox a:nth-of-type(3), .torrent_info_first_block + .linkbox a:nth-of-type(4), .screenshot-comparison__old-school-toggler-container a, .last5-movies__show-all-link, .film-club-discuss-link a:before, #jump_to_container a:nth-of-type(1), #jump_to_container a:nth-of-type(2), #jump_to_container a:nth-of-type(3), #jump_to_container a:nth-of-type(4), #jump_to_container a:nth-of-type(5), .subscribed_collages_table td span[style*="right"] a:nth-of-type(1), .subscribed_collages_table td span[style*="right"] a:nth-of-type(2), .subscribed_collages_table td span[style*="right"] a:nth-of-type(3), .subscribed_collages_table td span[style*="right"] a:nth-of-type(4), body#inbox #searchbox span[style^=float] a {
-  padding: 0 2px;
-  font-size: 10px;
-  text-transform: uppercase;
-  border: 1px solid;
-  border-radius: 2px;
-  font-family: 'Roboto';
-  font-weight: 400;
-  white-space: nowrap;
-  transition: none;
+#userinfo_username:before, body#requests .page__title ~ .linkbox:not(:last-of-type):first-of-type:before, .page__title ~ .linkbox:first-of-type:before, #userinfo_minor:before, body#userhistory .tabs__panel > .linkbox:before, body#requests .page__title ~ .linkbox:nth-of-type(2):before, body#bprate .linkbox:before, body#forums .page__title ~ .linkbox:nth-of-type(2) a:before {
+  display: block;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .huge-movie-list__movie__cover__link, .small-cover-movie-list__movie__link, .last5-movies__link, .user-page__recent-movie__link {
@@ -150,127 +154,6 @@ a[onclick^=ToggleTagSelector], [class$=__new]:before, [class$=__bookmark] a, [cl
   font-weight: 400;
 }
 
-.pagination__link--first, .pagination__link--previous, .pagination__link--next, .pagination__link--last {
-  font-size: 0;
-  display: inline-block;
-}
-
-.pagination__link--first:before, .pagination__link--previous:before, .pagination__link--next:before, .pagination__link--last:before {
-  font-size: 18px;
-}
-
-#userinfo_username:before, body#requests .page__title ~ .linkbox:not(:last-of-type):first-of-type:before, .page__title ~ .linkbox:first-of-type:before, #userinfo_minor:before, body#userhistory .tabs__panel > .linkbox:before, body#requests .page__title ~ .linkbox:nth-of-type(2):before, body#bprate .linkbox:before, body#forums .page__title ~ .linkbox:nth-of-type(2) a:before {
-  display: block;
-  width: 38px;
-  height: 38px;
-  line-height: 38px;
-  vertical-align: middle;
-  text-align: center;
-}
-
-/*
-%dropdown {
-  @extend %shadow;
-  z-index: 100;
-  position: absolute;
-  background: bg('popup');
-
-  a {
-    display: block;
-    height: $dropdown-entry-h;
-    width: $dropdown-entry-w;
-    padding: 0 12px;
-
-    line-height: $dropdown-entry-h;
-    text-transform: uppercase;
-    font-size: $dropdown-entry-fs;
-    vertical-align: middle;
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: none;
-
-    &:hover {
-      background: bg-alt('light', 5);
-    }
-  }
-
-  &:before {
-    @extend %head-block;
-    content: '\E5D4';
-    position: absolute;
-    top: -$dropdown-entry-h;
-    font-size: 16px;
-  }
-
-  &:hover:before {
-    background: bg('popup');
-  }
-}
-
-
-%dropdown-left {
-  @extend %dropdown;
-  left: -9999px;
-
-  &:before {
-    right: -9999px;
-    margin-right: $dropdown-entry-w - $panel-head-h;
-  }
-
-  &:hover {
-    left: 0;
-    &:before {
-      right: 0;
-    }
-  }
-}
-
-%dropdown-right {
-  @extend %dropdown;
-  right: -9999px;
-
-  &:before {
-    left: -9999px;
-    margin-left: $dropdown-entry-w - $panel-head-h;
-  }
-
-  &:hover {
-    right: 0;
-    &:before {
-      left: 0;
-    }
-  }
-}
-
-@mixin dropdown($side: 'right', $w: false, $space-top: true, $fontfix: true) {
-  @if $side == 'right' {
-    @extend %dropdown-right;
-  }
-  @else if $side == 'left' {
-    @extend %dropdown-left;
-  }
-
-  @if $w {
-    a {
-      width: $w;
-    }
-  }
-
-  @if $space-top {
-    margin-top: -(space());
-  }
-
-  @if $fontfix {
-    font-size: 0;
-
-    a {
-      font-size: $dropdown-entry-fs;
-    }
-  }
-}
-*/
 #userinfo_username, body#requests .page__title ~ .linkbox:first-of-type:not(:last-of-type), .page__title ~ .linkbox:first-of-type, #userinfo_minor, body#userhistory .tabs__panel > .linkbox, body#requests .page__title ~ .linkbox:nth-of-type(2), body#bprate .linkbox {
   z-index: 100;
   position: absolute;
@@ -647,8 +530,22 @@ img, img:before {
   background: #955f31 !important;
 }
 
-.alert--error, body#upload .thin > div:nth-of-type(1) {
+.alert--error, body#upload .thin > div[style*='width:700px'] {
   background: #914e4d !important;
+}
+
+.panel__heading__toggler {
+  position: absolute;
+  top: 14px;
+  right: 12px;
+}
+
+.panel__heading__toggler:before {
+  content: "";
+}
+
+.panel__heading__toggler:before {
+  font-size: 10px;
 }
 
 .toggle {
@@ -1092,6 +989,11 @@ img, img:before {
   background: rgba(255, 255, 255, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-bottom: none;
+}
+
+#Bbcode_Toolbar + textarea {
+  width: 100% !important;
+  resize: vertical;
 }
 
 .page__title ~ .linkbox:first-of-type {
@@ -2452,6 +2354,10 @@ img[title^="High quality"] {
   color: #1A1A1A;
 }
 
+.no-seeders {
+  color: #F7706F;
+}
+
 .basic-torrent-list__movie__torrent-opener-link {
   text-align: center;
   width: 30px;
@@ -2483,7 +2389,6 @@ img[title^="High quality"] {
 
 .basic-torrent-list__movie__additional-info {
   margin-top: 8px;
-  text-align: center;
   font-weight: 400;
 }
 
@@ -3170,7 +3075,7 @@ body#upload #content > div:nth-of-type(1) {
   width: auto !important;
 }
 
-body#upload .thin > div:nth-of-type(1) {
+body#upload .thin > div[style*='width:700px'] {
   width: 100% !important;
   margin-bottom: 2px !important;
   padding-left: 150px;
@@ -3179,7 +3084,7 @@ body#upload .thin > div:nth-of-type(1) {
   text-align: center;
 }
 
-body#upload .thin > div:nth-of-type(1) > br {
+body#upload .thin > div[style*='width:700px'] > br {
   display: none;
 }
 
