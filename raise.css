@@ -1157,6 +1157,7 @@ a[onclick^=ToggleTagSelector]:hover {
 
 #userinfo_username:before {
   content: '\E853';
+  top: -40px;
   width: 40px;
   height: 40px;
   margin-top: 1055px;
